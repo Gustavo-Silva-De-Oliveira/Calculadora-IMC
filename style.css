@@ -1,0 +1,118 @@
+/* Ajusta o fundo para receber animação. */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #8b48ff, #4231f5, #000000);
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+/* Cria animação fluída para o fundo. */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estiliza o centro. */
+.container {
+  background-color: lightskyblue;
+  width: 50%;
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Estiliza o Botão. */
+button {
+  padding: 10px 18px;
+  background: #005c99;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #003d66;
+}
+
+/* Estiliza o Resultado. */
+#resultado p {
+  margin-top: 25px;
+  padding: 15px;
+  background: #e8f8ff;
+  border-left: 6px solid #0088cc;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 18px;
+  font-weight: bold;
+  color: #003d66;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Esconde o campo até todar o Show*/
+  transform: translateY(10px);
+  transition: 0.4s ease; /*Tempo de transição*/
+}
+/* Puxa a animação do JS. */
+#resultado p.anima {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação de FadeIn. */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estiliza o Título */
+#topo {
+  font-size: 56px;
+  font-weight: bold;
+  color: #4231f5;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Campo para ajustar os subtítulos. */
+#altura {
+  font-size: 20px;
+  font-weight: bold;
+}
+#peso {
+  font-size: 20px;
+  font-weight: bold;
+}
+#nome {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Ajusta os campos de dados. */
+input {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 6px;
+  border: 1px solid #777;
+  text-align: left;
+  margin-right: 10px;
+}
+/* Arruma o cacete do alinhamento. */
+label {
+  width: 120px;
+}
