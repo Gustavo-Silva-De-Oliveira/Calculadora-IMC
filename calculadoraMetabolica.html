@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculador Metabolica</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+     <!-- Título da calculadora. -->
+    <div class="container text-center">
+      <div class="row align-items-start">
+        <div class="col-2"><h1></h1></div>
+        <div class="col-8" id="titulo"><h1>Calculadora Metabolica</h1></div>
+        <div class="col-2"><h1></h1></div>
+      </div>
+  
+
+    <!-- Centro de campos para preencher. -->
+    <div>
+        <label for="nome"><h3>Nome:</h3> </label> 
+         <input type="text" name="nome" id="nome"> </div>
+
+    <div>
+        <label for="peso"><h3>Peso:</h3> </label>  
+        <input type="number" name="peso" id="peso"></div>
+
+    <div>
+        <label for="altura"><h3>Altura:</h3> </label>  
+        <input type="number" name="altura" id="altura"></div>
+    <div>
+        <label for="idade"><h3>Idade:</h3> </label>  
+        <input type="number" name="altura" id="idade"></div>
+    <div>
+        <label for="altura"><h3>Homem</h3> </label>  
+        <input type="radio" name="sexo" value="homem">
+        <label for="altura"><h3>Mulher</h3> </label>
+        <input type="radio" name="sexo" value="mulher"></div>
+
+</br>
+<!-- Botão para enviar os dados e puxar função do IMC. -->
+    <button onclick="metabolica()">Enviar</button>
+
+    </br>
+    
+    <!-- Campo reservado para o Resultado. -->
+  <div class="row align-items-center">
+
+    <div class="col-2">
+      <h1></h1>
+    </div>
+
+    <div class="col-8" id="resultado">
+    
+    </div>
+
+    <div class="col-2">
+      <h1></h1>
+    </div>
+    
+  </div>
+</div>
+
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
