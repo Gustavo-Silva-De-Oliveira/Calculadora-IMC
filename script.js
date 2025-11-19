@@ -5,9 +5,24 @@ function imc() {
   let peso = document.getElementById("peso").valueAsNumber;
   let altura = document.getElementById("altura").valueAsNumber;
 
-  // Exige que preencha os campos!
-  if (!nome || isNaN(peso) || isNaN(altura || altura <= 0)) {
-    alert("Preencha todos os campos!");
+  ////////////////  Verificação de Campos  //////////////
+
+  // Cria array para verificação.
+  let faltando = [];
+
+  // Verifica um por um e caso falte, adiciona no Array.
+  if (!nome) faltando.push("Nome");
+  if (isNaN(peso)) faltando.push("Peso");
+  if (isNaN(altura) || altura <= 0) faltando.push("Altura");
+
+  // Verifica o Array.
+  if (faltando.length > 0) {
+    Swal.fire({
+      icon: "warning",
+      title: "Campo(s) faltando!",
+      html: `Por favor, preencha:  <strong>${faltando.join(", ")}</strong>`, // Adiciona no texto usando .Join os itens do Array que faltam para informar usuário.
+      confirmButtonText: "Ok",
+    });
     return;
   }
 
@@ -38,20 +53,42 @@ function imc() {
   });
 }
 
-// CALCULADORA METABOLICA
-function metabolica() {
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////// CALCULADORA METABOLICA //////////////
+
+function metabolica(event) {
+  event.preventDefault();
   let nome = document.getElementById("nome").value;
   let peso = document.getElementById("peso").valueAsNumber;
   let altura = document.getElementById("altura").valueAsNumber;
   let idade = document.getElementById("idade").valueAsNumber;
-  let sexo = document.querySelector('input[name="sexo"]:checked').value;
+  let sexo = document.querySelector('input[name="sexo"]:checked');
   let tmb;
 
-  // Exige que preencha os campos!
-  if (!nome || isNaN(peso) || isNaN(altura || altura <= 0)) {
-    alert("Preencha todos os campos!");
+  ////////////////  Verificação de Campos  //////////////
+
+  // Cria array para verificação.
+  let faltando = [];
+
+  // Verifica um por um e caso falte, adiciona no Array.
+  if (!nome) faltando.push("Nome");
+  if (isNaN(peso)) faltando.push("Peso");
+  if (isNaN(altura) || altura <= 0) faltando.push("Altura");
+  if (isNaN(idade)) faltando.push("Idade");
+  if (!sexo) faltando.push("Sexo");
+
+  // Verifica o Array.
+  if (faltando.length > 0) {
+    Swal.fire({
+      icon: "warning",
+      title: "Campo(s) faltando!",
+      html: `Por favor, preencha: <strong>${faltando.join(", ")}</strong>`, // Adiciona no texto usando .Join os itens do Array que faltam para informar usuário.
+      confirmButtonText: "Ok",
+    });
     return;
   }
+  sexo = sexo.value;
 
   // Calcula para o Sexo Masculino.
   if (sexo === "homem") {
@@ -82,4 +119,15 @@ function metabolica() {
   requestAnimationFrame(() => {
     resultado.classList.add("anima");
   });
+}
+
+function mostrarAlerta(mensagem, tipo = "danger") {
+  const alertaDiv = document.getElementById("alerta");
+
+  alertaDiv.innerHTML = `
+    <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+      ${mensagem}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  `;
 }

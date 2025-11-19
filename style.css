@@ -3,9 +3,10 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #8b48ff, #4231f5, #000000);
+  background: linear-gradient(135deg, #b249ff, #6f48ff, #447fff, #00a8ff);
   background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
+  animation: gradientMove 8s ease infinite;
+  filter: brightness(1.1) saturate(1.2);
 }
 /* Cria animação fluída para o fundo. */
 @keyframes gradientMove {
@@ -20,32 +21,37 @@ body {
   }
 }
 
-/* Estiliza o centro. */
+/* Centro. */
 .container {
-  background-color: lightskyblue;
+  background: rgb(119, 191, 222);
+  backdrop-filter: blur(12px);
+  border: 4px solid rgb(0, 0, 0);
   width: 50%;
   padding: 8px 16px;
   border-radius: 12px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 2px rgba(0, 0, 0, 0.5);
+  height: 100vh;
 }
 
-/* Estiliza o Botão. */
+/* Botão. */
 button {
-  padding: 10px 18px;
+  padding: 12px 22px;
   background: #005c99;
   color: white;
-  font-size: 16px;
-  border-radius: 6px;
+  font-size: 20px;
+  border-radius: 7px;
   border: none;
   cursor: pointer;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.4);
   transition: 0.3s;
 }
 
 button:hover {
   background: #003d66;
+  transform: scale(1.02);
 }
 
-/* Estiliza o Resultado. */
+/* Resultado. */
 #resultado p {
   margin-top: 25px;
   padding: 15px;
@@ -54,21 +60,21 @@ button:hover {
   border-radius: 6px;
   margin-left: auto;
   margin-right: auto;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  color: #003d66;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  color: #013151;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
   opacity: 0; /* Esconde o campo até todar o Show*/
   transform: translateY(10px);
-  transition: 0.4s ease; /*Tempo de transição*/
+  transition: 0.5s ease; /*Tempo de transição*/
 }
 /* Puxa a animação do JS. */
 #resultado p.anima {
-  opacity: 1;
+  opacity: 1; /*Revela o resultado!*/
   transform: translateY(0);
 }
 
-/* Animação de FadeIn. */
+/* FadeIn. */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -80,28 +86,23 @@ button:hover {
   }
 }
 
-/* Estiliza o Título */
+/* Título */
 #titulo {
-  font-family: "Poppins", sans-serif;
+  font-family: "oswald", sans-serif;
   font-size: 36px;
   font-weight: 600;
   text-align: center;
-
   color: #ffffff;
-  background: #1e6ad8; /* Azul mais escuro */
-
+  background: #1e6ad8;
   width: fit-content;
   margin: 20px auto; /* Centraliza automaticamente */
   padding: 16px 30px;
-
   border-radius: 15px;
-
-  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
   letter-spacing: 1px;
 }
 
-/* Campo para ajustar os subtítulos. */
+/* Subtítulos. */
 #altura {
   font-size: 18px;
   font-weight: bold;
@@ -129,12 +130,13 @@ input {
   margin-right: 12px;
 }
 
-/* Arruma o cacete do alinhamento. */
+/* Arruma o cacete do alinhamento. E texto*/
 label {
+  font-family: "martel", sans-serif;
   width: 120px;
 }
 
-/* Estiliza as opções de Links! */
+/* Links */
 #links {
   display: flex;
   flex-direction: column;
@@ -144,7 +146,7 @@ label {
 }
 #links a {
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   text-decoration: none;
   color: white;
@@ -163,4 +165,29 @@ label {
   background: #114a9f;
   transform: scale(1.05);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Alerta. */
+.error {
+  border: 2px solid #ff4d4d !important;
+  outline: none;
+  animation: treme 0.2s 3;
+}
+
+@keyframes treme {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

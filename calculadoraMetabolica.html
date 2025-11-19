@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
      <!-- Título da calculadora. -->
@@ -24,28 +28,28 @@
 
     <!-- Centro de campos para preencher. -->
     <div>
-        <label for="nome"><h3>Nome:</h3> </label> 
+        <label for="nome"><h3><b>Nome:</b></h3> </label> 
          <input type="text" name="nome" id="nome"> </div>
 
     <div>
-        <label for="peso"><h3>Peso:</h3> </label>  
-        <input type="number" name="peso" id="peso"></div>
+        <label for="peso"><h3><b>Peso:</b></h3> </label>  
+        <input type="number" name="peso" id="peso" placeholder="Em KG"></div>
 
     <div>
-        <label for="altura"><h3>Altura:</h3> </label>  
-        <input type="number" name="altura" id="altura"></div>
+        <label for="altura"><h3><b>Altura:</b></h3> </label>  
+        <input type="number" name="altura" id="altura" placeholder="Em Centímetros"></div>
     <div>
-        <label for="idade"><h3>Idade:</h3> </label>  
-        <input type="number" name="altura" id="idade"></div>
+        <label for="idade"><h3><b>Idade:</b></h3> </label>  
+        <input type="number" name="idade" id="idade"></div>
     <div>
-        <label for="altura"><h3>Homem</h3> </label>  
+        <label for="sexo"><h3><b>Homem</b></h3> </label>  
         <input type="radio" name="sexo" value="homem">
-        <label for="altura"><h3>Mulher</h3> </label>
+        <label for="sexo"><h3><b>Mulher</b></h3> </label>
         <input type="radio" name="sexo" value="mulher"></div>
 
 </br>
 <!-- Botão para enviar os dados e puxar função do IMC. -->
-    <button onclick="metabolica()">Enviar</button>
+    <button onclick="metabolica(event)">Enviar</button>
 
     </br>
     
@@ -69,5 +73,6 @@
 
     </div>
     <script src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
