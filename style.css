@@ -33,6 +33,80 @@ body {
   height: 100vh;
 }
 
+/* Ajusta seta */
+#retornaImg {
+  width: 50%;
+  height: auto;
+}
+
+/* Ajusta Botão de volta. */
+#volta {
+  margin: 25px;
+}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* Título */
+#titulo {
+  font-family: "oswald", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background: #1e6ad8;
+  width: fit-content;
+  margin: 20px auto; /* Centraliza automaticamente */
+  padding: 16px 30px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
+/* Subtítulos. */
+#altura {
+  font-size: 18px;
+  font-weight: bold;
+}
+#peso {
+  font-size: 18px;
+  font-weight: bold;
+}
+#nome {
+  font-size: 18px;
+  font-weight: bold;
+}
+#idade {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Ajusta os campos de dados. */
+input[type="text"],
+input[type="number"] {
+  all: unset;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  text-align: left;
+  margin-right: 12px;
+  background-color: #ffffff;
+}
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #ab15f6; /* Muda a cor da bolinha */
+  cursor: pointer;
+}
+input:focus {
+  border-color: #ab15f6;
+}
+
+/* Arruma o cacete do alinhamento. E texto*/
+label {
+  font-family: "martel", sans-serif;
+  width: 115px;
+}
+
 /* Botão. */
 button {
   padding: 12px 22px;
@@ -85,56 +159,7 @@ button:hover {
     transform: translateY(0);
   }
 }
-
-/* Título */
-#titulo {
-  font-family: "oswald", sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  text-align: center;
-  color: #ffffff;
-  background: #1e6ad8;
-  width: fit-content;
-  margin: 20px auto; /* Centraliza automaticamente */
-  padding: 16px 30px;
-  border-radius: 15px;
-  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.25);
-  letter-spacing: 1px;
-}
-
-/* Subtítulos. */
-#altura {
-  font-size: 18px;
-  font-weight: bold;
-}
-#peso {
-  font-size: 18px;
-  font-weight: bold;
-}
-#nome {
-  font-size: 18px;
-  font-weight: bold;
-}
-#idade {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Ajusta os campos de dados. */
-input {
-  padding: 7px;
-  margin: 5px;
-  border-radius: 6px;
-  border: 1px solid #777;
-  text-align: left;
-  margin-right: 12px;
-}
-
-/* Arruma o cacete do alinhamento. E texto*/
-label {
-  font-family: "martel", sans-serif;
-  width: 120px;
-}
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Links */
 #links {
@@ -150,12 +175,10 @@ label {
   font-weight: 500;
   text-decoration: none;
   color: white;
-
   background: #1e6ad8;
   width: 60%;
   text-align: center;
   padding: 12px 0;
-
   border-radius: 12px;
   transition: 0.3s ease;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
@@ -166,6 +189,8 @@ label {
   transform: scale(1.05);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 }
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Alerta. */
 .error {

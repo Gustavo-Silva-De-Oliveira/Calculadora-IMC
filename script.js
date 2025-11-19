@@ -1,4 +1,4 @@
-// CALCULADORA DE IMC!
+//////////////// CALCULADORA IMC //////////////
 function imc() {
   // Variáveis dos campos.
   let nome = document.getElementById("nome").value;
@@ -24,6 +24,10 @@ function imc() {
       confirmButtonText: "Ok",
     });
     return;
+  }
+
+  if (altura > 3) {
+    altura = altura / 100;
   }
 
   // Cria uma variável Valor com o Resultado do IMC.
@@ -90,6 +94,10 @@ function metabolica(event) {
   }
   sexo = sexo.value;
 
+  if (altura < 3) {
+    altura = altura * 100;
+  }
+
   // Calcula para o Sexo Masculino.
   if (sexo === "homem") {
     peso = peso * 10;
@@ -119,15 +127,4 @@ function metabolica(event) {
   requestAnimationFrame(() => {
     resultado.classList.add("anima");
   });
-}
-
-function mostrarAlerta(mensagem, tipo = "danger") {
-  const alertaDiv = document.getElementById("alerta");
-
-  alertaDiv.innerHTML = `
-    <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
-      ${mensagem}
-      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
-  `;
 }
